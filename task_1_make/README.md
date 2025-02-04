@@ -4,8 +4,8 @@
 
 
 Для выбора типа double соответственно
-    1) Раскомментировать строку #define TYPENAME double
-    2) Закомментировать строку #define TYPENAME float
+1) Раскомментировать строку #define TYPENAME double
+2) Закомментировать строку #define TYPENAME float
 
 
 Вывод float: -0.0277862
