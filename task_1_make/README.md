@@ -1,6 +1,6 @@
 Для выбора типа float необходимо в файле task_1_make.cpp
-    1) Раскомментировать строку #define TYPENAME float
-    2) Закомментировать строку #define TYPENAME double
+1) Раскомментировать строку #define TYPENAME float
+2) Закомментировать строку #define TYPENAME double
 
 
 Для выбора типа double соответственно
