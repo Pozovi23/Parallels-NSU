@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 
-#define TYPENAME float
-// #define TYPENAME double
+// #define TYPENAME float
+#define TYPENAME double
 #define AMOUNT_OF_ELEMENTS 10000000
 
 int main() {
