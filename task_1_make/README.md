@@ -22,7 +22,7 @@ wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/t
 
 make
 
-
+----------------------------------------------------
 Вывод float: -0.0277862
 
 Вывод double: 4.89582e-11
