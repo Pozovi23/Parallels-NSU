@@ -1,9 +1,12 @@
 Для запуска выполните команды:
 
 mkdir task_1_make
-  cd task_1_make
-  wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/task_1_make.cpp'
-  wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/Makefile'
+
+cd task_1_make
+
+wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/task_1_make.cpp'
+
+wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/Makefile'
 
 Далее для выбора типа float необходимо в файле task_1_make.cpp
   1) Раскомментировать строку #define TYPENAME float
@@ -16,7 +19,8 @@ mkdir task_1_make
   2) Закомментировать строку #define TYPENAME float
 
 Далее выполните команду:
-  make
+
+make
 
 
 Вывод float: -0.0277862
