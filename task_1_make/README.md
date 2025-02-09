@@ -1,6 +1,7 @@
 Для запуска выполните команды:
 
 mkdir task_1_make
+
 cd task_1_make
 wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/task_1_make.cpp'
 wget 'https://raw.githubusercontent.com/Pozovi23/Parallels-NSU/refs/heads/Make/task_1_make/Makefile'
