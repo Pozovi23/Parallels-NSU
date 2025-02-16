@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/compilers/bin/nvc++  -fopenmp CMakeFiles/subtask_1.dir/subtask_1.cpp.o -o subtask_1 
