@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/compilers/bin/nvc++  -fopenmp CMakeFiles/subtask_3_serial.dir/subtask_3_serial.cpp.o -o subtask_3_serial 
