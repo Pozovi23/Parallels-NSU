@@ -22,6 +22,7 @@ void solving(double* A, double* x_previous, double *b, long long size_mas, doubl
   b_L2 = sqrt(b_L2);
 
   while (err > E) {
+    double middle_res_L2 = 0;
     #pragma omp parallel num_threads(NUM_THREADS)
     {
       int nthreads = omp_get_num_threads();
@@ -30,34 +31,25 @@ void solving(double* A, double* x_previous, double *b, long long size_mas, doubl
       int items_per_thread = size_mas / nthreads;
       int lb = threadid * items_per_thread;
       int ub = (threadid == nthreads - 1) ? (size_mas - 1) : (lb + items_per_thread - 1);
-
+      
       for (long long i = lb; i <= ub; i++) {
         middle_res[i] = 0.0;
         for (long long j = 0; j < size_mas; j++) {
           middle_res[i] += A[i * size_mas + j] * x_previous[j];
         }
-      }
-
-      for (long long i = lb; i <= ub; i++) {
         middle_res[i] -= b[i];
+        double res = (middle_res[i] * middle_res[i]);
+        #pragma omp atomic
+          middle_res_L2 += res;
+
+        middle_res[i] *= CONST;
+        x_previous[i] -= middle_res[i];
       }
 
-      double middle_res_L2 = 0;
-      for (long long i = lb; i <= ub; i++) {
-        middle_res_L2 += (middle_res[i] * middle_res[i]);
-      }
 
       middle_res_L2 = sqrt(middle_res_L2);
 
       err = middle_res_L2 / b_L2;
-
-      for (long long i = lb; i <= ub; i++) {
-        middle_res[i] *= CONST;
-      }
-
-      for (long long i = lb; i <= ub; i++) {
-        x_previous[i] -= middle_res[i];
-      }
     }
   }
 
@@ -74,7 +66,7 @@ int main() {
   x_previous = (double*)malloc(sizeof(double) * size_mas);
   
   
-  #pragma omp parallel num_threads(20)
+  #pragma omp parallel num_threads(40)
   {
     long long nthreads = omp_get_num_threads();
     long long threadid = omp_get_thread_num();
@@ -102,7 +94,7 @@ int main() {
   const auto end{std::chrono::steady_clock::now()};
   const std::chrono::duration<double> elapsed_seconds{end - start};
   std::cout << elapsed_seconds.count() << std::endl;
-
+  std::cout << 60.90 / elapsed_seconds.count() << std::endl;
 
   // for (int i = 0; i < size_mas; i++) {
   //   std::cout << x_previous[i] << std::endl;
@@ -113,4 +105,3 @@ int main() {
   free(x_previous);
   return 0;
 }
-

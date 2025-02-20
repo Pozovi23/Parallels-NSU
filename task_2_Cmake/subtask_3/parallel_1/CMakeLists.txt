@@ -1,7 +1,7 @@
-project(subtask_3_parallel_1)
+project(parallel_1)
 
 cmake_minimum_required(VERSION 3.1)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 
-add_executable(subtask_3_parallel_1 subtask_3_parallel_1.cpp)
+add_executable(parallel_1 parallel_1.cpp)

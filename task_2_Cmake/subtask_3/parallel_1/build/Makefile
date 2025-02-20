@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named subtask_3_parallel_1
+# Target rules for targets named parallel_1
 
 # Build rule for target.
-subtask_3_parallel_1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 subtask_3_parallel_1
-.PHONY : subtask_3_parallel_1
+parallel_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parallel_1
+.PHONY : parallel_1
 
 # fast build rule for target.
-subtask_3_parallel_1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtask_3_parallel_1.dir/build.make CMakeFiles/subtask_3_parallel_1.dir/build
-.PHONY : subtask_3_parallel_1/fast
+parallel_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_1.dir/build.make CMakeFiles/parallel_1.dir/build
+.PHONY : parallel_1/fast
 
-subtask_3_parallel_1.o: subtask_3_parallel_1.cpp.o
-.PHONY : subtask_3_parallel_1.o
+parallel_1.o: parallel_1.cpp.o
+.PHONY : parallel_1.o
 
 # target to build an object file
-subtask_3_parallel_1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtask_3_parallel_1.dir/build.make CMakeFiles/subtask_3_parallel_1.dir/subtask_3_parallel_1.cpp.o
-.PHONY : subtask_3_parallel_1.cpp.o
+parallel_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_1.dir/build.make CMakeFiles/parallel_1.dir/parallel_1.cpp.o
+.PHONY : parallel_1.cpp.o
 
-subtask_3_parallel_1.i: subtask_3_parallel_1.cpp.i
-.PHONY : subtask_3_parallel_1.i
+parallel_1.i: parallel_1.cpp.i
+.PHONY : parallel_1.i
 
 # target to preprocess a source file
-subtask_3_parallel_1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtask_3_parallel_1.dir/build.make CMakeFiles/subtask_3_parallel_1.dir/subtask_3_parallel_1.cpp.i
-.PHONY : subtask_3_parallel_1.cpp.i
+parallel_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_1.dir/build.make CMakeFiles/parallel_1.dir/parallel_1.cpp.i
+.PHONY : parallel_1.cpp.i
 
-subtask_3_parallel_1.s: subtask_3_parallel_1.cpp.s
-.PHONY : subtask_3_parallel_1.s
+parallel_1.s: parallel_1.cpp.s
+.PHONY : parallel_1.s
 
 # target to generate assembly for a file
-subtask_3_parallel_1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtask_3_parallel_1.dir/build.make CMakeFiles/subtask_3_parallel_1.dir/subtask_3_parallel_1.cpp.s
-.PHONY : subtask_3_parallel_1.cpp.s
+parallel_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parallel_1.dir/build.make CMakeFiles/parallel_1.dir/parallel_1.cpp.s
+.PHONY : parallel_1.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... subtask_3_parallel_1"
-	@echo "... subtask_3_parallel_1.o"
-	@echo "... subtask_3_parallel_1.i"
-	@echo "... subtask_3_parallel_1.s"
+	@echo "... parallel_1"
+	@echo "... parallel_1.o"
+	@echo "... parallel_1.i"
+	@echo "... parallel_1.s"
 .PHONY : help
 
 

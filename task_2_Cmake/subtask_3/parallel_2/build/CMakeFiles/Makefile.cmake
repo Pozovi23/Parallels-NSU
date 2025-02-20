@@ -47,5 +47,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/subtask_3_parallel_2.dir/DependInfo.cmake"
+  "CMakeFiles/parallel_2.dir/DependInfo.cmake"
   )

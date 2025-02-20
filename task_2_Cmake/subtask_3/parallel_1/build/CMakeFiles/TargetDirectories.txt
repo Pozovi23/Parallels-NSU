@@ -1,3 +1,3 @@
-/home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_3/parallel_1/build/CMakeFiles/subtask_3_parallel_1.dir
+/home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_3/parallel_1/build/CMakeFiles/parallel_1.dir
 /home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_3/parallel_1/build/CMakeFiles/edit_cache.dir
 /home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_3/parallel_1/build/CMakeFiles/rebuild_cache.dir
