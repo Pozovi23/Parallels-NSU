@@ -1,1 +1,0 @@
-/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/compilers/bin/nvc++  -fopenmp CMakeFiles/subtask_3_parallel_1.dir/subtask_3_parallel_1.cpp.o -o subtask_3_parallel_1 

@@ -1,3 +1,0 @@
-/home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_2/build/CMakeFiles/subtask_2.dir
-/home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_2/build/CMakeFiles/edit_cache.dir
-/home/g.zhigalov/Parallels-NSU/task_2_Cmake/subtask_2/build/CMakeFiles/rebuild_cache.dir

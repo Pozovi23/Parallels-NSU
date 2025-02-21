@@ -1,1 +1,0 @@
-/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/compilers/bin/nvc++  -fopenmp CMakeFiles/optimized.dir/optimized.cpp.o -o optimized 
