@@ -68,7 +68,7 @@ void solving(double* A, double* x_previous, double *b, long long size_mas, doubl
 }
 
 
-int main() {
+double run_serial() {
   double *A, *x_previous, *b;
   long long size_mas = 11000;
 
@@ -76,7 +76,7 @@ int main() {
   b = (double*)malloc(sizeof(double) * size_mas);
   x_previous = (double*)malloc(sizeof(double) * size_mas);
   
-  #pragma omp parallel num_threads(20)
+  #pragma omp parallel num_threads(40)
   {
     long long nthreads = omp_get_num_threads();
     long long threadid = omp_get_thread_num();
@@ -103,11 +103,23 @@ int main() {
   solving(A, x_previous, b, size_mas, 0.00001);
   const auto end{std::chrono::steady_clock::now()};
   const std::chrono::duration<double> elapsed_seconds{end - start};
-  std::cout << elapsed_seconds.count() << std::endl;
+  std::cout << elapsed_seconds.count() << std::endl << std::endl;
 
   free(A);
   free(b);
   free(x_previous);
+  return elapsed_seconds.count();
+}
+
+
+int main() {
+  double all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_serial();
+    all_time += curr_time;
+  }
+
+  std::cout << all_time / 10;
   return 0;
 }
 

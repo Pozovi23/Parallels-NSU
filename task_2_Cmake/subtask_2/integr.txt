@@ -1,0 +1,263 @@
+Integration f(x) on [-4.000000000000, 4.000000000000], nsteps = 40000000
+Started serial
+0.480969
+
+Started serial
+0.475102
+
+Started serial
+0.480447
+
+Started serial
+0.475279
+
+Started serial
+0.475401
+
+Started serial
+0.472189
+
+Started serial
+0.479641
+
+Started serial
+0.474101
+
+Started serial
+0.477815
+
+Started serial
+0.472781
+
+avg time 1 thread: 0,476373
+
+Started with 2 threads
+0.253751
+
+Started with 2 threads
+0.244454
+
+Started with 2 threads
+0.239297
+
+Started with 2 threads
+0.241035
+
+Started with 2 threads
+0.24448
+
+Started with 2 threads
+0.241286
+
+Started with 2 threads
+0.240238
+
+Started with 2 threads
+0.23937
+
+Started with 2 threads
+0.241243
+
+Started with 2 threads
+0.245026
+
+avg time 2 threads: 0,243018
+S2: 1,96023
+
+Started with 4 threads
+0.134153
+
+Started with 4 threads
+0.123244
+
+Started with 4 threads
+0.123038
+
+Started with 4 threads
+0.123373
+
+Started with 4 threads
+0.12366
+
+Started with 4 threads
+0.123604
+
+Started with 4 threads
+0.123968
+
+Started with 4 threads
+0.123343
+
+Started with 4 threads
+0.123076
+
+Started with 4 threads
+0.123448
+
+avg time 4 threads: 0,124491
+S4: 3,82657
+
+Started with 7 threads
+0.0814741
+
+Started with 7 threads
+0.0709585
+
+Started with 7 threads
+0.0710561
+
+Started with 7 threads
+0.0708151
+
+Started with 7 threads
+0.07089
+
+Started with 7 threads
+0.0707283
+
+Started with 7 threads
+0.0713595
+
+Started with 7 threads
+0.0713564
+
+Started with 7 threads
+0.0711762
+
+Started with 7 threads
+0.0711386
+
+avg time 7 threads: 0,0720953
+S7: 6,60754
+
+Started with 8 threads
+0.0734574
+
+Started with 8 threads
+0.0625382
+
+Started with 8 threads
+0.0624833
+
+Started with 8 threads
+0.0622632
+
+Started with 8 threads
+0.0627623
+
+Started with 8 threads
+0.0626671
+
+Started with 8 threads
+0.0618344
+
+Started with 8 threads
+0.0699411
+
+Started with 8 threads
+0.0624344
+
+Started with 8 threads
+0.0619296
+
+avg time 8 threads: 0,0642311
+S8: 7,41654
+
+Started with 16 threads
+0.0440084
+
+Started with 16 threads
+0.0331886
+
+Started with 16 threads
+0.0330571
+
+Started with 16 threads
+0.0335809
+
+Started with 16 threads
+0.0333347
+
+Started with 16 threads
+0.03362
+
+Started with 16 threads
+0.0337299
+
+Started with 16 threads
+0.0414427
+
+Started with 16 threads
+0.0335853
+
+Started with 16 threads
+0.0331403
+
+avg time 16 threads: 0,0352688
+S16: 13,5069
+
+Started with 20 threads
+0.0378573
+
+Started with 20 threads
+0.0289414
+
+Started with 20 threads
+0.0271301
+
+Started with 20 threads
+0.0272567
+
+Started with 20 threads
+0.0269646
+
+Started with 20 threads
+0.0271634
+
+Started with 20 threads
+0.0271588
+
+Started with 20 threads
+0.0274687
+
+Started with 20 threads
+0.0272769
+
+Started with 20 threads
+0.0269574
+
+avg time 20 threads: 0,0284175
+S20: 16,7633
+
+Started with 40 threads
+0.0289422
+
+Started with 40 threads
+0.0199824
+
+Started with 40 threads
+0.0199864
+
+Started with 40 threads
+0.0201879
+
+Started with 40 threads
+0.0201336
+
+Started with 40 threads
+0.0203784
+
+Started with 40 threads
+0.0201152
+
+Started with 40 threads
+0.0200936
+
+Started with 40 threads
+0.0200796
+
+Started with 40 threads
+0.0202481
+
+avg time 40 threads: 0,0210148
+S40: 22,6685

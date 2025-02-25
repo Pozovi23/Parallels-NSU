@@ -5,7 +5,7 @@
 #include <inttypes.h>
 #include <chrono>
 #include <math.h>
-#define NUM_THREADS 40
+#include <iostream>
 
 
 double func(double x)
@@ -14,7 +14,7 @@ double func(double x)
 }
 
 
-double integrate_omp(double (*func)(double), double a, double b, int n)
+double integrate_omp(double (*func)(double), double a, double b, int n, int NUM_THREADS)
 {
   double h = (b - a) / n;
   double sum = 0.0;
@@ -47,31 +47,32 @@ double integrate(double (*func)(double), double a, double b, int n)
 }
 
 
-const double PI = 3.14159265358979323846;
 const double a = -4.0;
 const double b = 4.0;
 const int nsteps = 40000000;
 
-double run_parallel()
+double run_parallel(int NUM_THREADS)
 {
+  std::cout << "Started with " << NUM_THREADS << " threads"<< std::endl;
   const auto start{std::chrono::steady_clock::now()};
-  double res = integrate_omp(func, a, b, nsteps);
+  double res = integrate_omp(func, a, b, nsteps, NUM_THREADS);
   const auto end{std::chrono::steady_clock::now()};
   const std::chrono::duration<double> elapsed_seconds{end - start};
+  std::cout << elapsed_seconds.count() << std::endl << std::endl;
 
-  printf("Result (parallel): %.12f; error %.12f\n", res, fabs(res - sqrt(PI)));
   return elapsed_seconds.count();
 }
 
 
 double run_serial()
 {
+  std::cout << "Started serial"<< std::endl;
   const auto start{std::chrono::steady_clock::now()};
   double res = integrate(func, a, b, nsteps);
   const auto end{std::chrono::steady_clock::now()};
   const std::chrono::duration<double> elapsed_seconds{end - start};
+  std::cout << elapsed_seconds.count() << std::endl << std::endl;
 
-  printf("Result (serial): %.12f; error %.12f\n", res, fabs(res - sqrt(PI)));
   return elapsed_seconds.count();
 }
 
@@ -79,10 +80,78 @@ double run_serial()
 int main(int argc, char **argv)
 {
   printf("Integration f(x) on [%.12f, %.12f], nsteps = %d\n", a, b, nsteps);
-  double tserial = run_serial();
-  double tparallel = run_parallel();
-  printf("Execution time (serial): %.6f\n", tserial);
-  printf("Execution time (parallel): %.6f\n", tparallel);
-  printf("Speedup: %.2f\n", tserial / tparallel);
+
+  double one_thread_time = 0.0;
+
+  double all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_serial();
+    all_time += curr_time;
+  }
+  one_thread_time = all_time;
+  std::cout << "avg time 1 thread: " << all_time / 10 << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(2);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 2 threads: " << all_time / 10 << std::endl;
+  std::cout << "S2: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(4);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 4 threads: " << all_time / 10 << std::endl;
+  std::cout << "S4: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(7);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 7 threads: " << all_time / 10 << std::endl;
+  std::cout << "S7: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(8);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 8 threads: " << all_time / 10 << std::endl;
+  std::cout << "S8: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(16);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 16 threads: " << all_time / 10 << std::endl;
+  std::cout << "S16: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(20);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 20 threads: " << all_time / 10 << std::endl;
+  std::cout << "S20: " << one_thread_time / all_time << std::endl << std::endl;
+
+
+  all_time = 0.0;
+  for (int i = 0; i < 10; i++) {
+    double curr_time = run_parallel(40);
+    all_time += curr_time;
+  }
+  std::cout << "avg time 40 threads: " << all_time / 10 << std::endl;
+  std::cout << "S40: " << one_thread_time / all_time << std::endl << std::endl;
   return 0;
 }

@@ -1,0 +1,263 @@
+Started with 2 threads
+21.4282
+
+Started with 2 threads
+21.2332
+
+Started with 2 threads
+20.8912
+
+Started with 2 threads
+21.151
+
+Started with 2 threads
+20.8066
+
+Started with 2 threads
+20.9372
+
+Started with 2 threads
+20.8315
+
+Started with 2 threads
+20.841
+
+Started with 2 threads
+20.7607
+
+Started with 2 threads
+20.9875
+
+avg time 2 threads: 20,9868
+S2: 1,52596
+
+Started with 4 threads
+10.6429
+
+Started with 4 threads
+10.7559
+
+Started with 4 threads
+10.6341
+
+Started with 4 threads
+10.6822
+
+Started with 4 threads
+10.6444
+
+Started with 4 threads
+10.7943
+
+Started with 4 threads
+10.7405
+
+Started with 4 threads
+10.6486
+
+Started with 4 threads
+10.6433
+
+Started with 4 threads
+10.6405
+
+avg time 4 threads: 10,6827
+S4: 2,99785
+
+Started with 7 threads
+6.36272
+
+Started with 7 threads
+6.78079
+
+Started with 7 threads
+6.83901
+
+Started with 7 threads
+6.88282
+
+Started with 7 threads
+6.7172
+
+Started with 7 threads
+6.71387
+
+Started with 7 threads
+6.78297
+
+Started with 7 threads
+6.75878
+
+Started with 7 threads
+6.90007
+
+Started with 7 threads
+6.70549
+
+avg time 7 threads: 6,74437
+S7: 4,7484
+
+Started with 8 threads
+6.02476
+
+Started with 8 threads
+5.96316
+
+Started with 8 threads
+6.17078
+
+Started with 8 threads
+5.96765
+
+Started with 8 threads
+6.00302
+
+Started with 8 threads
+6.00351
+
+Started with 8 threads
+6.00302
+
+Started with 8 threads
+6.24994
+
+Started with 8 threads
+6.26661
+
+Started with 8 threads
+6.26571
+
+avg time 8 threads: 6,09182
+S8: 5,25705
+
+Started with 16 threads
+3.51436
+
+Started with 16 threads
+3.50599
+
+Started with 16 threads
+3.4886
+
+Started with 16 threads
+3.42845
+
+Started with 16 threads
+3.35965
+
+Started with 16 threads
+3.36299
+
+Started with 16 threads
+3.36693
+
+Started with 16 threads
+3.36949
+
+Started with 16 threads
+3.68332
+
+Started with 16 threads
+3.40957
+
+avg time 16 threads: 3,44894
+S16: 9,28547
+
+Started with 20 threads
+3.04288
+
+Started with 20 threads
+2.96384
+
+Started with 20 threads
+3.00033
+
+Started with 20 threads
+2.96249
+
+Started with 20 threads
+2.92237
+
+Started with 20 threads
+3.06349
+
+Started with 20 threads
+2.92727
+
+Started with 20 threads
+2.92029
+
+Started with 20 threads
+2.93953
+
+Started with 20 threads
+2.902
+
+avg time 20 threads: 2,96445
+S20: 10,803
+
+Started with 40 threads
+3.37664
+
+Started with 40 threads
+3.37508
+
+Started with 40 threads
+3.36539
+
+Started with 40 threads
+3.36166
+
+Started with 40 threads
+3.35854
+
+Started with 40 threads
+3.33843
+
+Started with 40 threads
+3.32921
+
+Started with 40 threads
+3.39567
+
+Started with 40 threads
+3.3771
+
+Started with 40 threads
+3.38039
+
+avg time 40 threads: 3,36581
+S40: 9,5148
+
+Started with 80 threads
+3.29807
+
+Started with 80 threads
+4.34024
+
+Started with 80 threads
+3.83558
+
+Started with 80 threads
+3.76512
+
+Started with 80 threads
+3.68442
+
+Started with 80 threads
+3.85052
+
+Started with 80 threads
+3.80214
+
+Started with 80 threads
+3.97702
+
+Started with 80 threads
+3.9237
+
+Started with 80 threads
+3.78574
+
+avg time 80 threads: 3,82625
+S80: 8,3698
