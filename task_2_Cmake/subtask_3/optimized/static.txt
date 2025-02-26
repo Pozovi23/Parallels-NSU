@@ -1,264 +1,239 @@
 Started with 2 threads
-39,4577
+40,2016
 
 Started with 2 threads
-39,4763
+40,4377
 
 Started with 2 threads
-40,053
+40,5977
 
 Started with 2 threads
-42,202
+40,9058
 
 Started with 2 threads
-45,8163
+40,0054
 
 Started with 2 threads
-41,0855
+40,3516
 
 Started with 2 threads
-41,0223
+41,3117
 
 Started with 2 threads
-39,3086
+40,3211
 
 Started with 2 threads
-39,3127
+40,8284
 
 Started with 2 threads
-39,0109
+40,7778
 
-avg time 2 threads: 40,6745
-S2: c348
-
-Started with 4 threads
-20,6575
+min time 2 threads: 40,0054
+S2: 0,788393
 
 Started with 4 threads
-21,3875
+21,3799
 
 Started with 4 threads
-21,0967
+21,5172
 
 Started with 4 threads
-24,413
+20,9434
 
 Started with 4 threads
-25,2361
+20,9636
 
 Started with 4 threads
-22,8302
+20,9974
 
 Started with 4 threads
-21,4083
+21,3518
 
 Started with 4 threads
-21,7353
+21,7836
 
 Started with 4 threads
-23,4984
+21,0345
 
 Started with 4 threads
-21,0452
+21,7346
 
-avg time 4 threads: 22,3308
-S4: 1,43412
+Started with 4 threads
+21,3829
 
-Started with 7 threads
-12,8377
-
-Started with 7 threads
-14,4213
+min time 4 threads: 20,9434
+S4: 1,50597
 
 Started with 7 threads
-14,9695
+13,0317
 
 Started with 7 threads
-15,9745
+13,0202
 
 Started with 7 threads
-14,3385
+13,0221
 
 Started with 7 threads
-15,5149
+13,0357
 
 Started with 7 threads
-16,256
+13,0359
 
 Started with 7 threads
-13,6202
+13,0408
 
 Started with 7 threads
-13,3041
+15,3645
 
 Started with 7 threads
-13,0672
+15,3504
 
-avg time 7 threads: 14,4304
-S7: 2,21927
+Started with 7 threads
+13,129
 
-Started with 8 threads
-13,1762
+Started with 7 threads
+12,919
 
-Started with 8 threads
-12,5089
-
-Started with 8 threads
-12,746
+min time 7 threads: 12,919
+S7: 2,44136
 
 Started with 8 threads
-13,4466
+11,9624
 
 Started with 8 threads
-11,3859
+11,3779
 
 Started with 8 threads
-13,3877
+11,7942
 
 Started with 8 threads
-12,0483
+11,5929
 
 Started with 8 threads
-12,9054
+11,69
 
 Started with 8 threads
-12,9207
+11,578
 
 Started with 8 threads
-12,6154
+12,5732
 
-avg time 8 threads: 12,7141
-S8: 2,51886
+Started with 8 threads
+13,4009
 
-Started with 16 threads
-7,50659
+Started with 8 threads
+12,7221
 
-Started with 16 threads
-8,88137
+Started with 8 threads
+11,3579
 
-Started with 16 threads
-8,02657
-
-Started with 16 threads
-9,20213
+min time 8 threads: 11,3579
+S8: 2,77692
 
 Started with 16 threads
-9,61194
+7,50775
 
 Started with 16 threads
-8,26229
+7,45144
 
 Started with 16 threads
-9,30634
+7,28514
 
 Started with 16 threads
-8,88067
+7,2854
 
 Started with 16 threads
-8,63711
+7,28502
 
 Started with 16 threads
-8,09982
+7,41174
 
-avg time 16 threads: 8,64148
-S16: 3,70596
+Started with 16 threads
+9,02387
 
-Started with 20 threads
-8,2211
+Started with 16 threads
+8,07703
 
-Started with 20 threads
-8,16149
+Started with 16 threads
+7,40806
 
-Started with 20 threads
-8,00208
+Started with 16 threads
+7,40164
 
-Started with 20 threads
-7,85311
-
-Started with 20 threads
-7,34907
+min time 16 threads: 7,28502
+S16: 4,32943
 
 Started with 20 threads
-7,91646
+6,28109
 
 Started with 20 threads
-7,65101
+6,22559
 
 Started with 20 threads
-8,44597
+6,38666
 
 Started with 20 threads
-8,60226
+6,22839
 
 Started with 20 threads
-8,01956
+6,21548
 
-avg time 20 threads: 8,02221
-S20: 3,99204
+Started with 20 threads
+6,2355
 
-Started with 40 threads
-5,53348
+Started with 20 threads
+6,24179
 
-Started with 40 threads
-5,40593
+Started with 20 threads
+6,38836
 
-Started with 40 threads
-5,14728
+Started with 20 threads
+6,08887
 
-Started with 40 threads
-5,31881
+Started with 20 threads
+6,18515
 
-Started with 40 threads
-5,31838
-
-Started with 40 threads
-5,4646
+min time 20 threads: 6,08887
+S20: 5,17994
 
 Started with 40 threads
-4,34274
+4,11428
 
 Started with 40 threads
-5,19887
+4,11272
 
 Started with 40 threads
-5,41176
+3,82267
 
 Started with 40 threads
-5,09596
+3,87681
 
-avg time 40 threads: 5,22378
-S40: 6,13062
+Started with 40 threads
+3,98877
 
-Started with 80 threads
-3,9377
+Started with 40 threads
+166,981
 
-Started with 80 threads
-3,96635
+Started with 40 threads
+3,93567
 
-Started with 80 threads
-3,8744
+Started with 40 threads
+3,85766
 
-Started with 80 threads
-3,90418
+Started with 40 threads
+3,90037
 
-Started with 80 threads
-3,86035
+Started with 40 threads
+4,12409
 
-Started with 80 threads
-3,70056
-
-Started with 80 threads
-3,89476
+min time 40 threads: 3,82267
+S40: 8,25079
 
 Started with 80 threads
-4,05495
+опять что то не то было, пришлось отдельно запускать на 80 потоков
 
 Started with 80 threads
-4,20267
+2,42698
 
 Started with 80 threads
-4,02259
-
-avg time 80 threads: 3,94185
-S80: 8,12435
-
+и опять в бесконечность ушел

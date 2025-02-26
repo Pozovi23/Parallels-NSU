@@ -3,6 +3,7 @@
 #include <cmath>
 #include <chrono>
 #include <omp.h>
+#include <algorithm>
 
 
 double E = 0.00001;
@@ -113,13 +114,13 @@ double run_serial() {
 
 
 int main() {
-  double all_time = 0.0;
+  double all_time = 1000000000000000.0;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_serial();
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
 
-  std::cout << all_time / 10;
+  std::cout << all_time;
   return 0;
 }
 

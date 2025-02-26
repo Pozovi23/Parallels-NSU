@@ -6,6 +6,7 @@
 #include <chrono>
 #include <math.h>
 #include <iostream>
+#include <algorithm>
 
 
 double func(double x)
@@ -83,75 +84,75 @@ int main(int argc, char **argv)
 
   double one_thread_time = 0.0;
 
-  double all_time = 0.0;
+  double all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_serial();
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
   one_thread_time = all_time;
-  std::cout << "avg time 1 thread: " << all_time / 10 << std::endl << std::endl;
+  std::cout << "min time 1 thread: " << all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(2);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 2 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 2 threads: " << all_time << std::endl;
   std::cout << "S2: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(4);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 4 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 4 threads: " << all_time << std::endl;
   std::cout << "S4: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(7);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 7 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 7 threads: " << all_time << std::endl;
   std::cout << "S7: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(8);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 8 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 8 threads: " << all_time << std::endl;
   std::cout << "S8: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(16);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 16 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 16 threads: " << all_time << std::endl;
   std::cout << "S16: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(20);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 20 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 20 threads: " << all_time << std::endl;
   std::cout << "S20: " << one_thread_time / all_time << std::endl << std::endl;
 
 
-  all_time = 0.0;
+  all_time = 100000000000000000000.0;;
   for (int i = 0; i < 10; i++) {
     double curr_time = run_parallel(40);
-    all_time += curr_time;
+    all_time = std::min(curr_time, all_time);
   }
-  std::cout << "avg time 40 threads: " << all_time / 10 << std::endl;
+  std::cout << "min time 40 threads: " << all_time << std::endl;
   std::cout << "S40: " << one_thread_time / all_time << std::endl << std::endl;
   return 0;
 }
