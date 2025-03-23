@@ -17,6 +17,12 @@ public:
   Server() {}
 
   void start() {
+    {
+      std::unique_lock<std::mutex> lock(mtx);
+      running = true;
+    }
+    cv.notify_one();
+
     server = std::thread([this] {
       while (true) {
         TaskStruct task_struct;
@@ -32,6 +38,7 @@ public:
         task_struct.task(); 
       }
     });
+
   }
 
   int add_task(std::function<T()> func) {
@@ -76,72 +83,97 @@ private:
   std::unordered_map<int, std::future<T>> future_tasks;
   std::mutex mtx;
   std::condition_variable cv;
-  bool running = true;
+  bool running = false;
   int id_counter = 0;
   std::queue<TaskStruct> tasks;
 };
 
 
-void client_sin(Server<double>& server, int tasks_count) {
+template<typename T>
+T fun_sin(T arg) { 
+  return std::sin(static_cast<double>(arg)); 
+}
+
+
+template<typename T>
+T fun_sqrt(T arg) 
+{ 
+  return std::sqrt(arg); 
+}
+
+
+template<typename T>
+T fun_pow(T base, T exp) { 
+  return std::pow(base, exp); 
+}
+
+
+template<typename T>
+void client_sin(Server<T>* server, int tasks_count, const std::string& filename) {
   std::mt19937 gen(std::random_device{}());
-  std::uniform_real_distribution<double> dist(-100, 100);
-  std::ofstream output("../client_sin.txt");
+  std::uniform_real_distribution<double> dist(-100.0, 100.0);
+  std::ofstream output(filename);
   for (int i = 0; i < tasks_count; ++i) {
-    double arg = dist(gen);
-    int task_id = server.add_task([arg]() {
-      return std::sin(arg);
+    T arg = static_cast<T>(dist(gen));
+    int task_id = server->add_task([arg]() {
+      return fun_sin(arg);
     });
-    double result = server.request_result(task_id);
+    T result = server->request_result(task_id);
     output << "sin(" << arg << ") = " << result << "\n";
   }
   output.close();
 }
 
 
-// void client_sqrt(Server<double>& server, int tasks_count) {
-//   std::mt19937 gen(std::random_device{}());
-//   std::uniform_real_distribution<double> dist(0.0, 1000.0);
-//   std::ofstream output("../client_sqrt.txt");
-//   for (int i = 0; i < tasks_count; ++i) {
-//     double arg = dist(gen);
-//     auto done_task = server.add_task([arg]() {
-//       return std::sqrt(arg);
-//     });
-//     output << "sqrt(" << arg << ") = " << done_task << "\n";
-//   }
-//   output.close();
-// }
+template<typename T>
+void client_sqrt(Server<T>* server, int tasks_count, const std::string& filename) {
+  std::mt19937 gen(std::random_device{}());
+  std::uniform_real_distribution<double> dist(0.0, 1000.0);
+  std::ofstream output(filename);
+  for (int i = 0; i < tasks_count; ++i) {
+    T arg = static_cast<T>(dist(gen));
+    int task_id = server->add_task([arg]() {
+      return fun_sqrt(arg);
+    });
+    T result = server->request_result(task_id);
+    output << "sqrt(" << arg << ") = " << result << "\n";
+  }
+  output.close();
+}
 
 
-// void client_pow(Server<double>& server, int tasks_count) {
-//   std::mt19937 gen(std::random_device{}());
-//   std::uniform_real_distribution<double> bs(1.0, 10.0);
-//   std::uniform_real_distribution<double> expp(1.0, 5.0);
-//   std::ofstream output("../client_pow.txt");
-//   for (int i = 0; i < tasks_count; ++i) {
-//     double base = bs(gen);
-//     double exp = expp(gen);
-//     auto done_task = server.add_task([base, exp]() {
-//       return std::pow(base, exp);
-//     });
-//     output << base << "^" << exp << " = " << done_task << "\n";
-//   }
-//   output.close();
-// }
+template<typename T>
+void client_pow(Server<T>* server, int tasks_count, const std::string& filename) {
+  std::mt19937 gen(std::random_device{}());
+  std::uniform_real_distribution<double> base_dist(1.0, 10.0);
+  std::uniform_real_distribution<double> exp_dist(1.0, 5.0);
+  std::ofstream output(filename);
+  for (int i = 0; i < tasks_count; ++i) {
+    T base = static_cast<T>(base_dist(gen));
+    T expon = static_cast<T>(exp_dist(gen));
+    int task_id = server->add_task([base, expon]() {
+      return fun_pow(base, expon);
+    });
+    T result = server->request_result(task_id);
+    output << base << "^" << expon << " = " << result << "\n";
+  }
+  output.close();
+}
+
 
 int main() {
-  Server<double> server;
+  Server<int> server;
   server.start();
 
   const int N = 10000;
 
-  std::thread t1(client_sin, std::ref(server), N);
-  // std::thread t2(client_sqrt, std::ref(server), N);
-  // std::thread t3(client_pow, std::ref(server), N);
+  std::thread t1(client_sin<int>, &server, N, "../client_sin.txt");
+  std::thread t2(client_sqrt<int>, &server, N, "../client_sqrt.txt");
+  std::thread t3(client_pow<int>, &server, N, "../client_pow.txt");
 
   t1.join();
-  // t2.join();
-  // t3.join();
+  t2.join();
+  t3.join();
 
   server.stop();
 }
