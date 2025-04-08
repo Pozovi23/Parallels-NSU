@@ -46,12 +46,9 @@ def execute():
         window = WindowImage(frequency)
         sensors = [sensor0, sensor1, sensor2, sensor_camera]
 
-        queues = [queue.Queue() for i in range(4)]
+        queues = [queue.Queue() for _ in range(4)]
 
-        last_values = {i: None for i in range(4)}
-        last_values[0] = 0
-        last_values[1] = 0
-        last_values[2] = 0
+        last_values = {0: 0, 1: 0, 2: 0, 3: None}
 
         threads = []
         for i in range(4):
