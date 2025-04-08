@@ -94,7 +94,8 @@ def execute():
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 stop_event.set()
                 for t in threads:
-                    t.join()
+                    if t.is_alive():
+                        t.join()
                 break
 
     except Exception as e:
