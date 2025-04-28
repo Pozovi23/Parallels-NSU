@@ -1,0 +1,1 @@
+pgc++ themp_task_gpu.cpp -o t -lboost_program_options -acc=gpu -Minfo=all -I/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/12.3/include/

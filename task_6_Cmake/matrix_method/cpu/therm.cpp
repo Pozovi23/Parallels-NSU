@@ -20,6 +20,26 @@ int SIZE = NX * NY;
 #define TAU -0.01
 
 
+double get_a(int row, int col) {
+	if (row==col) return -4;
+	if (row+1==col) return 1;
+	if (row-1==col) return 1;
+	if (row+NX==col) return 1;
+	if (row-NX==col) return 1;
+	return 0;
+}
+
+
+void init_matrix(double *A) {
+	#pragma acc parallel loop collapse(2)
+	for (int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			A[i * SIZE + j] = get_a(i, j);
+		}
+	}
+}
+
+
 void init_b(double *b) {
 	double corners[4] = {10.0, 20.0, 30.0, 20.0};
 	
@@ -125,9 +145,12 @@ int main(int argc, char *argv[]) {
 	if (vm.count("iters")) ITER = vm["iters"].as<int>();
 
 	SIZE = NX * NY;
+	double *A = new double[SIZE*SIZE];
 	double *b = new double[SIZE];
 	double *x = new double[SIZE];
 	
+	
+	init_matrix(A);
 	init_b(b);
 	memset(x, 0, sizeof(double)*SIZE);
 
