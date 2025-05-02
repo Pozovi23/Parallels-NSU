@@ -91,10 +91,8 @@ int main(int argc, char *argv[]) {
 	double result = 0;
 	
   auto destructor = [](cublasHandle_t* handle) {
-		if (handle && *handle) {
-			cublasDestroy(*handle);
-			delete handle;
-		}
+		cublasDestroy(*handle);
+		delete handle;
 	};	
 	std::unique_ptr<cublasHandle_t, decltype(destructor)> handle(new cublasHandle_t, destructor);
 	cublasCreate(handle.get());
