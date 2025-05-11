@@ -174,15 +174,13 @@ int main(int argc, char *argv[]) {
     matrix_size, cudaMemcpyDeviceToHost);
 
   FILE* f = fopen(OUT_FILE, "wb");
-  if (f) {
-    for (int i = 1; i < height - 1; i++) {
-      for (int j = 1; j < width - 1; j++) {
-        double value = result_matrix[i * width + j];
-        fwrite(&value, sizeof(double), 1, f);
-      }
+  for (int i = 1; i < height - 1; i++) {
+    for (int j = 1; j < width - 1; j++) {
+      double value = result_matrix[i * width + j];
+      fwrite(&value, sizeof(double), 1, f);
     }
-    fclose(f);
   }
+  fclose(f);
   delete[] h_matrix1;
   delete[] h_matrix2;
   cudaFree(d_matrix1);
