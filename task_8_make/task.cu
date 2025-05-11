@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
 
   double norm_orig = compute_l2_norm(d_matrix1, width * height);
 
-  dim3 block_size(16, 16);
+  dim3 block_size(20, 20);
   dim3 grid_size((width + block_size.x - 1) / block_size.x, (height + block_size.y - 1) / block_size.y);
 
   int iter = 0;
