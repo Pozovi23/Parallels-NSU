@@ -62,7 +62,7 @@ double compute_l2_norm(double* d_matrix, int size) {
   double* d_squares;
   cudaMalloc(&d_squares, size * sizeof(double));
   
-  dim3 blockDim(256);
+  dim3 blockDim(400);
   dim3 gridDim((size + blockDim.x - 1) / blockDim.x);
   square_kernel<<<gridDim, blockDim>>>(d_matrix, d_squares, size);
   cudaDeviceSynchronize();
